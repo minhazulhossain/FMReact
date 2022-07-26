@@ -1,0 +1,218 @@
+/* Main Header */
+
+.main-header-wrapper {
+    .header-top {
+        background-color: $gray-100;
+        border-bottom: 1px dotted #ddd;
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .25rem 0;
+            .contact-information {
+                display: flex;
+                a {
+                    font-size: .9rem;
+                    &:nth-child(1) {
+                        padding-right: 1rem;
+                        // border-right: 1px solid $gray-600;
+                    }
+                    &:nth-child(2) {
+                        padding-left: 1rem;
+                    }
+                    i {
+                        line-height: 0.7rem;
+                    }
+                }
+            }
+            .social-media-links {
+                a {
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+    .header-middle {
+        .navbar {
+            padding: 1rem 0;
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+                img {
+                    height: 50px;
+                }
+            }
+            .navbar-nav {
+                .nav-item {
+                    .nav-link {
+                        color: $gray-700 !important;
+                        padding: 0 2rem;
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                        i {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-bottom-wrapper {
+        background-color: $gray-100;
+        padding: .5rem 0;
+        border-bottom: 1px dotted #ddd;
+        border-top: 1px dotted #ddd;
+        .header-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            .header-bottom-left {
+                color: $gray-700;
+                text-decoration: none;
+                i {
+                    line-height: 1.3;
+                }
+            }
+            .header-bottom-search-wrap {
+                position: relative;
+                min-width: 0;
+                -webkit-box-flex: 1;
+                flex-grow: 1;
+                form {
+                    &::after {
+                        font-family: 'bootstrap-icons';
+                        content: '\f52a';
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        transform: translate(0%, -50%)
+                    }
+                }
+            }
+            .header-bottom-right {
+                a {
+                    i {
+                        line-height: .6rem;
+                        font-size: 1.4rem;
+                    }
+                    text-decoration: none;
+                    color: $gray-700;
+                    &:nth-child(2) {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Off Canvas Category Menu */
+
+// .main-category-wrapper {
+//     .cat-parent-wrapper {
+//         .cat-parent-item {
+//             display: flex;
+//             position: relative;
+//             align-items: center;
+//             i {
+//                 &::before {
+//                     line-height: 1.3;
+//                 }
+//             }
+//             &::before {
+//                 font-family: bootstrap-icons !important;
+//                 content: "\f285";
+//                 transition: transform .2s ease-in-out;
+//                 position: absolute;
+//                 right: 0;
+//             }
+//             &:not(.collapsed) {
+//                 &::before {
+//                     transform: rotate(90deg);
+//                 }
+//             }
+//         }
+//         .cat-child-wrapper {
+//             .cat-child-item {
+//                 display: flex;
+//                 position: relative;
+//                 &.no-child {
+//                     &::before {
+//                         content: none;
+//                     }
+//                 }
+//                 &::before {
+//                     font-family: bootstrap-icons !important;
+//                     content: "\f285";
+//                     transition: transform .2s ease-in-out;
+//                     position: absolute;
+//                     right: 0;
+//                 }
+//                 &:not(.collapsed) {
+//                     &::before {
+//                         transform: rotate(90deg);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+.off-canvas-category-menu-wrapper {
+    list-style-type: none;
+    padding-left: 0;
+    >li {
+        &:not(:last-child) {
+            border-bottom: 1px solid $gray-200;
+        }
+        line-height: 2rem;
+    }
+    li {
+        &.show {
+            background-color: $gray-100;
+            >a {
+                .toggle-btn {
+                    &::after {
+                        transform: rotate(630deg);
+                    }
+                }
+            }
+        }
+    }
+    .toggle-btn {
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        transform: translateY(-50%);
+        &::after {
+            font-family: bootstrap-icons !important;
+            content: "\f285";
+            transition: transform 0.5s;
+            display: block;
+        }
+    }
+    ul {
+        overflow: hidden;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 0;
+        width: 100%;
+        list-style-type: none;
+        margin-top: 0;
+        &.active {
+            height: 100%;
+        }
+        li {
+            a {
+                padding-left: 1.4rem;
+            }
+            li {
+                a {
+                    padding-left: 2.4rem;
+                }
+            }
+        }
+    }
+}
